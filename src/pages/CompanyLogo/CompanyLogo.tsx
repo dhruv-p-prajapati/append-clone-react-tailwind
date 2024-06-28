@@ -1,9 +1,9 @@
-interface ILogos {
+interface ILogoItem {
   src: string;
   alt: string;
 }
 
-const logos: ILogos[] = [
+const LogoItems: ILogoItem[] = [
   { src: "/images/client-1.png", alt: "client-1" },
   { src: "/images/client-2.png", alt: "client-2" },
   { src: "/images/client-3.png", alt: "client-3" },
@@ -15,11 +15,11 @@ const logos: ILogos[] = [
 const CompanyLogo = () => {
   return (
     <div className="flex flex-wrap gap-10 px-14 justify-around py-8">
-      {logos.map((logo) => {
+      {LogoItems.map((logoItem: ILogoItem) => {
         return (
           <img
-            src={logo.src}
-            alt={logo.alt}
+            src={logoItem.src}
+            alt={logoItem.alt}
             className="w-24 filter grayscale duration-300 hover:grayscale-0"
           />
         );
