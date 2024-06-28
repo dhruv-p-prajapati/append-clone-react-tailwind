@@ -3,7 +3,7 @@ import Button from "./Button";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 
-const navLinks = [
+const NavLinks: string[] = [
   "Home",
   "About",
   "Services",
@@ -38,7 +38,7 @@ const Navbar = () => {
       id="nav"
       className={`fixed top-0 left-0 right-0 ${
         isScrolled ? "bg-white" : ""
-      } flex justify-between items-center py-6 px-6 duration-500`}
+      } flex justify-between items-center py-8 px-4 duration-500 z-10`}
     >
       {/* Logo */}
       <div className="flex gap-1 text-2xl font-semibold">
@@ -51,19 +51,19 @@ const Navbar = () => {
       {/* Links */}
       <div>
         <ul
-          className={`${isScrolled ? "text-primary" : "text-white"} lg:flex ${
+          className={`${isScrolled ? "" : "text-white"} lg:flex ${
             open
-              ? "bg-white flex flex-col gap-5 text-secondary absolute w-[90vw] h-screen top-16 items-start -translate-x-1/2 left-1/2 rounded p-4"
-              : "hidden gap-7"
+              ? "bg-white flex flex-col gap-5 text-black absolute w-[90vw] h-screen top-16 items-start -translate-x-1/2 left-1/2 rounded p-4"
+              : "hidden gap-7 text-black"
           }`}
         >
-          {navLinks.map((navLink) => {
+          {NavLinks.map((navLink) => {
             return <li>{navLink}</li>;
           })}
         </ul>
       </div>
 
-      {/* Get started Buttton and Hamburger Menu */}
+      {/* Get started Button and Hamburger Menu */}
       <div className="flex justify-center items-center gap-3">
         <Button>Get Started</Button>
 
