@@ -6,6 +6,7 @@ import {
   BsGraphUpArrow,
   BsArrowRight,
 } from "react-icons/bs";
+import { NavLinkSlugs } from "../../components/Navbar";
 
 interface IAboutCardItem {
   icon: React.ReactNode;
@@ -41,7 +42,7 @@ const AboutCardItems: IAboutCardItem[] = [
 
 const AboutPage = () => {
   return (
-    <div className="bg-aboutBg py-14">
+    <div id={NavLinkSlugs.ABOUT} className="bg-aboutBg py-14">
       <div className="w-screen mx-auto lg:w-[90vw] flex flex-col xl2:flex-row gap-10 items-center">
         {/* About Description */}
         <div className="px-12 basis-5/12">
@@ -71,7 +72,12 @@ const AboutPage = () => {
         {/* About cards */}
         <div className="flex basis-7/12 flex-wrap justify-center gap-5 w-[75vw] md:w-screen">
           {AboutCardItems.map((aboutCardItem: IAboutCardItem) => {
-            return <GenerateAboutCard aboutCardItem={aboutCardItem} />;
+            return (
+              <GenerateAboutCard
+                key={aboutCardItem.title}
+                aboutCardItem={aboutCardItem}
+              />
+            );
           })}
         </div>
       </div>
