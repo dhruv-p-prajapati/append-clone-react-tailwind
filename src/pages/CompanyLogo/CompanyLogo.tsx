@@ -20,7 +20,7 @@ const CompanyLogo = () => {
           <img
             src={logoItem.src}
             alt={logoItem.alt}
-            className="w-24 filter grayscale duration-300 hover:grayscale-0"
+            className="w-24 filter grayscale opacity-50 duration-300 hover:grayscale-0 hover:opacity-100"
           />
         );
       })}

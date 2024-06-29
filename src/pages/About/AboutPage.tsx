@@ -1,5 +1,11 @@
 import Button from "../../components/Button";
-import { FaArrowRightLong } from "react-icons/fa6";
+import {
+  BsBuildings,
+  BsClipboardPulse,
+  BsCommand,
+  BsGraphUpArrow,
+  BsArrowRight,
+} from "react-icons/bs";
 
 interface IAboutCardItem {
   icon: React.ReactNode;
@@ -10,23 +16,23 @@ interface IAboutCardItem {
 
 const AboutCardItems: IAboutCardItem[] = [
   {
-    icon: <FaArrowRightLong />,
+    icon: <BsBuildings />,
     title: "Eius provident",
     desc: "Magni repellendus vel ullam hic officia accusantium ipsa dolor omnis dolor voluptatem",
   },
   {
-    icon: <FaArrowRightLong />,
+    icon: <BsClipboardPulse />,
     title: "Rerum aperiam",
     desc: "Autem saepe animi et aut aspernatur culpa facere. Rerum saepe rerum voluptates quia",
     isUpper: true,
   },
   {
-    icon: <FaArrowRightLong />,
+    icon: <BsCommand />,
     title: "Veniam omnis",
     desc: "Omnis perferendis molestias culpa sed. Recusandae quas possimus. Quod consequatur corrupti",
   },
   {
-    icon: <FaArrowRightLong />,
+    icon: <BsGraphUpArrow />,
     title: "Delares sapiente",
     desc: "Sint et dolor voluptas minus possimus nostrum. Reiciendis commodi eligendi omnis quideme lorenda",
     isUpper: true,
@@ -36,7 +42,7 @@ const AboutCardItems: IAboutCardItem[] = [
 const AboutPage = () => {
   return (
     <div className="bg-aboutBg py-14">
-      <div className="w-screen mx-auto lg:w-[85vw] flex flex-col lg:flex-row gap-10 items-center">
+      <div className="w-screen mx-auto lg:w-[90vw] flex flex-col xl2:flex-row gap-10 items-center">
         {/* About Description */}
         <div className="px-12 basis-5/12">
           <h3 className="lg:text-base font-medium py-2 px-5 text-accent bg-[#f4ebeb] inline-block rounded">
@@ -57,13 +63,13 @@ const AboutPage = () => {
           <Button className="flex items-center group relative pl-4 pr-5">
             <span className="mr-3">Read More</span>
             <span className="duration-300 absolute right-3 group-hover:right-2">
-              <FaArrowRightLong />
+              <BsArrowRight />
             </span>
           </Button>
         </div>
 
         {/* About cards */}
-        <div className="flex basis-7/12 flex-wrap justify-center gap-5">
+        <div className="flex basis-7/12 flex-wrap justify-center gap-5 w-[75vw] md:w-screen">
           {AboutCardItems.map((aboutCardItem: IAboutCardItem) => {
             return <GenerateAboutCard aboutCardItem={aboutCardItem} />;
           })}
@@ -82,11 +88,11 @@ const GenerateAboutCard = ({
 }) => {
   return (
     <div
-      className={`w-[min(90vw,350px)] bg-white px-8 py-10 group rounded-xl shadow-2xl ${
+      className={` md:w-[calc(50%-40px)] bg-white px-8 py-10 group rounded-xl shadow-2xl ${
         aboutCardItem?.isUpper ? "md:-mt-8 md:mb-8" : ""
       }`}
     >
-      <div className="w-20 h-20 rounded-full flex justify-center items-center mb-6 text-accent bg-[#f4ebeb] duration-300 group-hover:bg-accent group-hover:text-white">
+      <div className="text-3xl w-20 h-20 rounded-full flex justify-center items-center mb-6 text-accent bg-[#f4ebeb] duration-300 group-hover:bg-accent group-hover:text-white">
         {aboutCardItem.icon}
       </div>
 
@@ -94,7 +100,9 @@ const GenerateAboutCard = ({
         {aboutCardItem.title}
       </h3>
 
-      <p className="text-default font-light">{aboutCardItem.desc}</p>
+      <p className="text-default font-light font-opensans">
+        {aboutCardItem.desc}
+      </p>
     </div>
   );
 };

@@ -8,7 +8,7 @@ const HomePage = () => {
           <h1 className="text-3xl lg:text-5xl text-white font-bold">
             Welcome to Our Website
           </h1>
-          <p className="text-white text-base lg:text-xl">
+          <p className="text-white opacity-80 text-base lg:text-xl font-opensans">
             We are team of talented designers making websites with Bootstrap
           </p>
         </div>

@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        xl2: "1200px", // Custom breakpoint named 'xl2'
+      },
       colors: {
         default: "#212529",
         primary: "#32353a",

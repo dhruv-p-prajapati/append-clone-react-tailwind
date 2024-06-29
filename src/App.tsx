@@ -3,6 +3,7 @@ import AboutPage from "./pages/About/AboutPage";
 import HomePage from "./pages/Home/HomePage";
 import CompanyLogo from "./pages/CompanyLogo/CompanyLogo";
 import StatsPage from "./pages/Stats/StatsPage";
+import ServicesPage from "./pages/Services/ServicesPage";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <CompanyLogo />
       <AboutPage />
       <StatsPage />
+      <ServicesPage />
     </div>
   );
 };

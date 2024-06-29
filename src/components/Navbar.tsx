@@ -25,6 +25,21 @@ const Navbar = () => {
     window.scrollY > navHeight ? setIsScrolled(true) : setIsScrolled(false);
   };
 
+  const toggleNavbar = () => {
+    open && setOpen((prev) => !prev);
+  };
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [open]);
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
@@ -37,8 +52,8 @@ const Navbar = () => {
     <div
       id="nav"
       className={`fixed top-0 left-0 right-0 ${
-        isScrolled ? "bg-white" : ""
-      } flex justify-between items-center py-8 px-4 duration-500 z-10`}
+        isScrolled ? "bg-white shadow-lg" : ""
+      } flex justify-between items-center py-7 px-4 duration-300 z-50`}
     >
       {/* Logo */}
       <div className="flex gap-1 text-2xl font-semibold">
@@ -49,25 +64,32 @@ const Navbar = () => {
       </div>
 
       {/* Links */}
-      <div>
+      <div className="">
         <ul
-          className={`${isScrolled ? "" : "text-white"} lg:flex ${
+          className={`sm:text-default ${
+            isScrolled ? "" : "xl2:text-white"
+          } xl2:flex ${
             open
-              ? "bg-white flex flex-col gap-5 text-black absolute w-[90vw] h-screen top-16 items-start -translate-x-1/2 left-1/2 rounded p-4"
-              : "hidden gap-7 text-black"
+              ? "bg-white flex flex-col gap-5 absolute w-[90vw] h-screen top-16 items-start -translate-x-1/2 left-1/2 rounded p-4 z-40"
+              : "hidden gap-7"
           }`}
         >
           {NavLinks.map((navLink) => {
-            return <li>{navLink}</li>;
+            return <li onClick={toggleNavbar}>{navLink}</li>;
           })}
         </ul>
       </div>
+
+      {/* For overlay */}
+      {open && (
+        <div className="fixed inset-0 bg-[rgba(0,0,0,0.5)] bg-opacity-50 z-30"></div>
+      )}
 
       {/* Get started Button and Hamburger Menu */}
       <div className="flex justify-center items-center gap-3">
         <Button>Get Started</Button>
 
-        <div className="lg:hidden">
+        <div className="xl2:hidden z-40">
           {!open ? (
             <GiHamburgerMenu
               className={`text-2xl ${
@@ -79,9 +101,7 @@ const Navbar = () => {
             />
           ) : (
             <IoMdClose
-              className={`text-2xl ${
-                isScrolled ? "text-primary" : "text-white"
-              }`}
+              className={`text-2xl text-white`}
               onClick={() => {
                 setOpen(!open);
               }}
