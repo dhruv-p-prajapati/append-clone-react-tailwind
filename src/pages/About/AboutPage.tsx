@@ -53,7 +53,7 @@ const AboutPage = () => {
             Ducimus rerum libero reprehenderit cumque
           </h2>
 
-          <p className="mt-2 mb-4">
+          <p className="mt-2 mb-4 font-opensans text-default">
             Ipsa sint sit. Quis ducimus tempore dolores impedit et dolor cumque
             alias maxime. Enim reiciendis minus et rerum hic non. Dicta quas cum
             quia maiores iure. Quidem nulla qui assumenda incidunt voluptatem
