@@ -2,17 +2,34 @@ import { useEffect, useState } from "react";
 import Button from "./Button";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
+import { Link } from "react-scroll";
 
-const NavLinks: string[] = [
-  "Home",
-  "About",
-  "Services",
-  "Portfolio",
-  "Pricing",
-  "Team",
-  "Blog",
-  "Dropdown",
-  "Contact",
+export enum NavLinkSlugs {
+  HOME = "home",
+  ABOUT = "about",
+  SERVICES = "services",
+  PORTFOLIO = "portfolio",
+  PRICING = "pricing",
+  TEAM = "team",
+  BLOG = "blog",
+  CONTACT = "contact",
+}
+
+interface INavLinkItem {
+  title: string;
+  slug: string;
+}
+
+const NavLinkItems: INavLinkItem[] = [
+  { title: "Home", slug: NavLinkSlugs.HOME },
+  { title: "About", slug: NavLinkSlugs.ABOUT },
+  { title: "Services", slug: NavLinkSlugs.SERVICES },
+  { title: "Portfolio", slug: NavLinkSlugs.PORTFOLIO },
+  { title: "Pricing", slug: NavLinkSlugs.PRICING },
+  { title: "Team", slug: NavLinkSlugs.TEAM },
+  { title: "Blog", slug: NavLinkSlugs.BLOG },
+  { title: "Dropdown", slug: "" },
+  { title: "Contact", slug: NavLinkSlugs.CONTACT },
 ];
 
 const Navbar = () => {
@@ -67,15 +84,29 @@ const Navbar = () => {
       <div className="">
         <ul
           className={`sm:text-default ${
-            isScrolled ? "" : "xl2:text-white"
+            isScrolled ? "" : "xl2:text-[#ffffff80]"
           } xl2:flex ${
             open
               ? "bg-white flex flex-col gap-5 absolute w-[90vw] h-screen top-16 items-start -translate-x-1/2 left-1/2 rounded p-4 z-40"
               : "hidden gap-7"
           }`}
         >
-          {NavLinks.map((navLink) => {
-            return <li onClick={toggleNavbar}>{navLink}</li>;
+          {NavLinkItems.map((navLinkItem: INavLinkItem) => {
+            return (
+              <Link
+                key={navLinkItem.title}
+                to={navLinkItem.slug}
+                smooth
+                duration={500}
+                className="cursor-pointer"
+                spy
+                activeClass={`${
+                  isScrolled ? "text-accent" : "sm:text-accent xl2:text-white"
+                }`}
+              >
+                <li onClick={toggleNavbar}>{navLinkItem.title}</li>
+              </Link>
+            );
           })}
         </ul>
       </div>

@@ -1,8 +1,12 @@
 import Button from "../../components/Button";
+import { NavLinkSlugs } from "../../components/Navbar";
 
 const HomePage = () => {
   return (
-    <div className="h-screen bg-cover bg-center bg-hero-image flex justify-center items-center">
+    <div
+      id={NavLinkSlugs.HOME}
+      className="h-screen bg-cover bg-center bg-hero-image flex justify-center items-center"
+    >
       <div className="w-[95vw] md:w-[85%]">
         <div className="flex flex-col gap-3 items-start">
           <h1 className="text-3xl lg:text-5xl text-white font-bold">

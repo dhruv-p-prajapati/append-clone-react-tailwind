@@ -18,6 +18,7 @@ const CompanyLogo = () => {
       {LogoItems.map((logoItem: ILogoItem) => {
         return (
           <img
+            key={logoItem.src}
             src={logoItem.src}
             alt={logoItem.alt}
             className="w-24 filter grayscale opacity-50 duration-300 hover:grayscale-0 hover:opacity-100"
