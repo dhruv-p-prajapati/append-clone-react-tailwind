@@ -4,6 +4,7 @@ import HomePage from "./pages/Home/HomePage";
 import CompanyLogo from "./pages/CompanyLogo/CompanyLogo";
 import StatsPage from "./pages/Stats/StatsPage";
 import ServicesPage from "./pages/Services/ServicesPage";
+import FeaturePage from "./pages/Features/FeaturePage";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <AboutPage />
       <StatsPage />
       <ServicesPage />
+      <FeaturePage />
     </div>
   );
 };

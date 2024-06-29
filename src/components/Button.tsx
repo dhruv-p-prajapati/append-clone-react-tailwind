@@ -9,7 +9,7 @@ interface IButtonProps {
 const Button = ({ className, children, ...props }: IButtonProps) => {
   return (
     <button
-      className={`font-opensans bg-accent text-white rounded-md py-1 px-2 lg:py-2 lg:px-6 duration-300 hover:opacity-85 ${className}`}
+      className={`font-opensans bg-accent text-white rounded py-1 px-2 lg:py-2 lg:px-6 duration-300 hover:opacity-85 ${className}`}
       {...props}
     >
       {children}
