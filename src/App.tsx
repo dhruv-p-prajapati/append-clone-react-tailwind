@@ -9,6 +9,7 @@ import PricingPage from "./pages/Pricing/PricingPage";
 import FaqPage from "./pages/Faq/FaqPage";
 import TeamPage from "./pages/Team/TeamPage";
 import CtaPage from "./pages/Cta/CtaPage";
+import ContactUsPage from "./pages/ContactUs/ContactUsPage";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
       <FaqPage />
       <TeamPage />
       <CtaPage />
+      <ContactUsPage />
     </div>
   );
 };
