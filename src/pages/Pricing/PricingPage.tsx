@@ -112,7 +112,7 @@ const GeneratePricingCard = ({
 }) => {
   return (
     <div
-      className={`py-14 px-10 relative shadow-lg rounded-2xl w-full lg:basis-1/3 bg-white ${
+      className={`py-14 mb-14 px-10 relative shadow-lg rounded-2xl w-full lg:basis-1/3 bg-white ${
         pricingItem.isMiddle
           ? "lg:scale-[1.15] z-10 border-[3px] border-accent"
           : ""
