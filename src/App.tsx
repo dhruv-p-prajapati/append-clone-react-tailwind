@@ -8,6 +8,7 @@ import FeaturePage from "./pages/Features/FeaturePage";
 import PricingPage from "./pages/Pricing/PricingPage";
 import FaqPage from "./pages/Faq/FaqPage";
 import TeamPage from "./pages/Team/TeamPage";
+import CtaPage from "./pages/Cta/CtaPage";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
       <PricingPage />
       <FaqPage />
       <TeamPage />
+      <CtaPage />
     </div>
   );
 };
