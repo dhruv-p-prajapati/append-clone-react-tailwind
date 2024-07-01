@@ -10,6 +10,7 @@ import FaqPage from "./pages/Faq/FaqPage";
 import TeamPage from "./pages/Team/TeamPage";
 import CtaPage from "./pages/Cta/CtaPage";
 import ContactUsPage from "./pages/ContactUs/ContactUsPage";
+import TestimonialsPage from "./pages/Testimonials/TestimonialsPage";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
       <FaqPage />
       <TeamPage />
       <CtaPage />
+      <TestimonialsPage />
       <ContactUsPage />
     </div>
   );
