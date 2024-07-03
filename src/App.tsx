@@ -11,6 +11,7 @@ import TeamPage from "./pages/Team/TeamPage";
 import CtaPage from "./pages/Cta/CtaPage";
 import ContactUsPage from "./pages/ContactUs/ContactUsPage";
 import TestimonialsPage from "./pages/Testimonials/TestimonialsPage";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
       <CtaPage />
       <TestimonialsPage />
       <ContactUsPage />
+      <Footer />
     </div>
   );
 };
