@@ -22,6 +22,9 @@
   margin-right: auto;
 }
 
+.react-multi-carousel-dot-list {
+  margin-bottom: 20px;
+}
 
 @media screen and (max-width: 768px) {
   .container {
