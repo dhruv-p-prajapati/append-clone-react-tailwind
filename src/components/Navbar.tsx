@@ -3,6 +3,7 @@ import Button from "./Button";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { Link } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 
 export enum NavLinkSlugs {
   HOME = "home",
@@ -32,18 +33,19 @@ const NavLinkItems: INavLinkItem[] = [
   { title: "Contact", slug: NavLinkSlugs.CONTACT },
 ];
 
-const Navbar = () => {
+const Navbar = ({ isOtherRoute }: { isOtherRoute?: Boolean }) => {
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [navHeight, setNavHeight] = useState(0);
 
   const handleScroll = () => {
-    const navHeight: number = (document.querySelector("#nav") as HTMLDivElement)
-      .offsetHeight;
     window.scrollY > navHeight ? setIsScrolled(true) : setIsScrolled(false);
   };
 
   const toggleNavbar = () => {
     open && setOpen((prev) => !prev);
+    navigate("/");
   };
 
   useEffect(() => {
@@ -58,6 +60,10 @@ const Navbar = () => {
   }, [open]);
 
   useEffect(() => {
+    const navHeight: number = (document.querySelector("#nav") as HTMLDivElement)
+      .offsetHeight;
+    setNavHeight(navHeight);
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -69,12 +75,16 @@ const Navbar = () => {
     <div
       id="nav"
       className={`fixed top-0 left-0 right-0 ${
-        isScrolled ? "bg-white shadow-lg" : ""
-      } flex justify-between items-center py-7 px-4 duration-300 z-50`}
+        isOtherRoute || isScrolled ? "bg-white shadow-lg" : ""
+      } flex justify-between items-center py-7 px-4 duration-300 z-50 md:h-24`}
     >
       {/* Logo */}
       <div className="flex gap-1 text-2xl font-semibold">
-        <h1 className={`${isScrolled ? "text-primary" : "text-white"}`}>
+        <h1
+          className={`${
+            isOtherRoute || isScrolled ? "text-primary" : "text-white"
+          }`}
+        >
           Append
         </h1>
         <span className="text-accent">.</span>
@@ -84,10 +94,10 @@ const Navbar = () => {
       <div className="">
         <ul
           className={`sm:text-default ${
-            isScrolled ? "" : "xl2:text-[#ffffff80]"
+            isOtherRoute || isScrolled ? "" : "xl2:text-[#ffffff80]"
           } xl2:flex ${
             open
-              ? "bg-white flex flex-col gap-5 absolute w-[90vw] h-screen top-16 items-start -translate-x-1/2 left-1/2 rounded p-4 z-40"
+              ? "bg-white flex flex-col gap-5 absolute w-[90vw] top-16 items-start -translate-x-1/2 left-1/2 rounded p-4 z-40"
               : "hidden gap-7"
           }`}
         >
@@ -101,7 +111,9 @@ const Navbar = () => {
                 className="cursor-pointer"
                 spy
                 activeClass={`${
-                  isScrolled ? "text-accent" : "sm:text-accent xl2:text-white"
+                  isOtherRoute || isScrolled
+                    ? "text-accent"
+                    : "sm:text-accent xl2:text-white"
                 }`}
               >
                 <li onClick={toggleNavbar}>{navLinkItem.title}</li>
@@ -124,7 +136,7 @@ const Navbar = () => {
           {!open ? (
             <GiHamburgerMenu
               className={`text-2xl ${
-                isScrolled ? "text-primary" : "text-white"
+                isOtherRoute || isScrolled ? "text-primary" : "text-white"
               }`}
               onClick={() => {
                 setOpen(!open);
