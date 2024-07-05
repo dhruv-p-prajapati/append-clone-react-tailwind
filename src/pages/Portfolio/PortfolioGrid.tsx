@@ -91,7 +91,7 @@ const PortfolioGrid = ({ selectedTab }: { selectedTab: PortfolioTabs }) => {
                   <BsZoomIn />
                 </i>
                 <i className="cursor-pointer">
-                  <Link to="/portfolio-details">
+                  <Link to="portfolio-details">
                     <BsLink45Deg />
                   </Link>
                 </i>
