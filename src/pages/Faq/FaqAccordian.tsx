@@ -37,7 +37,7 @@ const AccordianItems: IAccordianItem[] = [
 ];
 
 const FaqAccordian = () => {
-  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [activeIndex, setActiveIndex] = useState<number[]>([]);
 
   return (
     <div className="w-full mx-auto flex flex-col gap-5">
@@ -60,24 +60,28 @@ const GenerateAccordianItem = ({
   setActiveIndex,
 }: {
   accordianItem: IAccordianItem;
-  activeIndex: number;
-  setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
+  activeIndex: number[];
+  setActiveIndex: React.Dispatch<React.SetStateAction<number[]>>;
 }) => {
   return (
     <div key={accordianItem.id} className="shadow-accordian p-4">
       <div
         className="text-left flex justify-between items-center cursor-pointer"
         onClick={() => {
-          activeIndex === accordianItem.id
-            ? setActiveIndex(0)
-            : setActiveIndex(accordianItem.id);
+          activeIndex.includes(accordianItem.id)
+            ? setActiveIndex((prevIndexs) => {
+                return prevIndexs.filter(
+                  (prevIndex) => prevIndex !== accordianItem.id
+                );
+              })
+            : setActiveIndex((prevIndexs) => [...prevIndexs, accordianItem.id]);
         }}
       >
         <div className="flex gap-2 items-start justify-center text-lg">
           <span className="text-accent">{accordianItem.id}.</span>
           <span
             className={`font-medium duration-300 hover:text-accent ${
-              activeIndex === accordianItem.id ? "text-accent" : ""
+              activeIndex.includes(accordianItem.id) ? "text-accent" : ""
             }`}
           >
             {accordianItem.title}
@@ -85,7 +89,9 @@ const GenerateAccordianItem = ({
         </div>
         <div
           className={`${
-            activeIndex === accordianItem.id ? "rotate-90 text-accent" : ""
+            activeIndex.includes(accordianItem.id)
+              ? "rotate-90 text-accent"
+              : ""
           } duration-300`}
         >
           <BsChevronRight />
@@ -93,7 +99,7 @@ const GenerateAccordianItem = ({
       </div>
       <div
         className={`duration-300 ${
-          activeIndex === accordianItem.id
+          activeIndex.includes(accordianItem.id)
             ? "opacity-100 py-4"
             : "overflow-hidden h-0 w-0"
         } font-opensans`}
