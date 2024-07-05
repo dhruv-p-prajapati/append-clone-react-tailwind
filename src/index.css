@@ -16,6 +16,10 @@
   font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   width: 85%;
   margin-left: auto;
@@ -24,6 +28,13 @@
 
 .react-multi-carousel-dot-list {
   margin-bottom: 20px;
+}
+
+.react-multiple-carousel__arrow--left,
+.react-multiple-carousel__arrow--right {
+  margin: 80px;
+  opacity: 0.5;
+  z-index: 0;
 }
 
 @media screen and (max-width: 768px) {

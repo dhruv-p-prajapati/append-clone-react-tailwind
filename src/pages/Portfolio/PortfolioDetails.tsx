@@ -4,6 +4,7 @@ import DetailPageHeader from "../../components/DetailPageHeader";
 import Navbar from "../../components/Navbar";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import Button from "../../components/Button";
+import { useEffect } from "react";
 
 const responsive = {
   desktop: {
@@ -40,6 +41,17 @@ const ImageItems: IImageItem[] = [
 ];
 
 const PortfolioDetails = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // for smooth scrolling
+    });
+  };
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
+
   return (
     <div>
       <Navbar isOtherRoute={true} />
@@ -60,9 +72,10 @@ const PortfolioDetails = () => {
           responsive={responsive}
           infinite={true}
           autoPlay={true}
+          arrows={true}
           autoPlaySpeed={5000}
           transitionDuration={2000}
-          removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+          removeArrowOnDeviceType={["tablet", "mobile"]}
         >
           {ImageItems.map((imageItem: IImageItem) => {
             return (

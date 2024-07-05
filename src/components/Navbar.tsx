@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import Button from "./Button";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
-import { Link } from "react-scroll";
-import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
 
 export enum NavLinkSlugs {
-  HOME = "home",
+  HOME = "/",
   ABOUT = "about",
   SERVICES = "services",
   PORTFOLIO = "portfolio",
@@ -14,6 +14,7 @@ export enum NavLinkSlugs {
   TEAM = "team",
   BLOG = "blog",
   CONTACT = "contact",
+  DROPDOWN = "dropdown",
 }
 
 interface INavLinkItem {
@@ -22,19 +23,19 @@ interface INavLinkItem {
 }
 
 const NavLinkItems: INavLinkItem[] = [
-  { title: "Home", slug: NavLinkSlugs.HOME },
+  { title: "Home", slug: "" },
   { title: "About", slug: NavLinkSlugs.ABOUT },
   { title: "Services", slug: NavLinkSlugs.SERVICES },
   { title: "Portfolio", slug: NavLinkSlugs.PORTFOLIO },
   { title: "Pricing", slug: NavLinkSlugs.PRICING },
   { title: "Team", slug: NavLinkSlugs.TEAM },
   { title: "Blog", slug: NavLinkSlugs.BLOG },
-  { title: "Dropdown", slug: "" },
+  { title: "Dropdown", slug: NavLinkSlugs.DROPDOWN },
   { title: "Contact", slug: NavLinkSlugs.CONTACT },
 ];
 
 const Navbar = ({ isOtherRoute }: { isOtherRoute?: Boolean }) => {
-  const navigate = useNavigate();
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [navHeight, setNavHeight] = useState(0);
@@ -45,7 +46,6 @@ const Navbar = ({ isOtherRoute }: { isOtherRoute?: Boolean }) => {
 
   const toggleNavbar = () => {
     open && setOpen((prev) => !prev);
-    navigate("/");
   };
 
   useEffect(() => {
@@ -103,27 +103,25 @@ const Navbar = ({ isOtherRoute }: { isOtherRoute?: Boolean }) => {
         >
           {NavLinkItems.map((navLinkItem: INavLinkItem) => {
             return (
-              <Link
-                key={navLinkItem.title}
-                to={navLinkItem.slug}
-                smooth
-                duration={500}
-                className="cursor-pointer"
-                spy
-                activeClass={`${
-                  isOtherRoute || isScrolled
-                    ? "text-accent"
-                    : "sm:text-accent xl2:text-white"
+              <NavHashLink
+                to={"/#" + navLinkItem.slug}
+                className={`${
+                  location.pathname === "/" &&
+                  location.hash.slice(1) === navLinkItem.slug
+                    ? isOtherRoute || isScrolled
+                      ? "text-accent"
+                      : "sm:text-accent xl2:text-white"
+                    : ""
                 }`}
               >
                 <li onClick={toggleNavbar}>{navLinkItem.title}</li>
-              </Link>
+              </NavHashLink>
             );
           })}
         </ul>
       </div>
 
-      {/* For overlay */}
+      {/* For overlay in small devices */}
       {open && (
         <div className="fixed inset-0 bg-[rgba(0,0,0,0.5)] bg-opacity-50 z-30"></div>
       )}
