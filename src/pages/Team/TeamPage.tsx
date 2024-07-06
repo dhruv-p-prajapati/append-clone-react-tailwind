@@ -71,7 +71,7 @@ const TeamPage = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10">
           {TeamItems.map((teamItem: ITeamItem) => {
-            return <GenerateTeamItem teamItem={teamItem} />;
+            return <GenerateTeamItem key={teamItem.src} teamItem={teamItem} />;
           })}
         </div>
       </div>

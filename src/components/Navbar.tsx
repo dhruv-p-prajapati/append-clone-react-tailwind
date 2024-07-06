@@ -106,6 +106,7 @@ const Navbar = ({ isOtherRoute }: { isOtherRoute?: Boolean }) => {
           {NavLinkItems.map((navLinkItem: INavLinkItem) => {
             return (
               <NavHashLink
+                key={navLinkItem.slug}
                 to={"/#" + navLinkItem.slug}
                 className={cn(
                   location.pathname === "/" &&

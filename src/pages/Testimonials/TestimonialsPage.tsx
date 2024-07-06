@@ -87,7 +87,10 @@ const TestimonialsPage = () => {
         >
           {TestimonialItems.map((testimonialItem: ITestimonialItem) => {
             return (
-              <GenerateTestimonialItem testimonialItem={testimonialItem} />
+              <GenerateTestimonialItem
+                key={testimonialItem.src}
+                testimonialItem={testimonialItem}
+              />
             );
           })}
         </Carousel>

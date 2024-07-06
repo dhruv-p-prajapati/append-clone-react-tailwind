@@ -1,10 +1,9 @@
-import React, { HTMLInputTypeAttribute } from "react";
+import React from "react";
 import { cn } from "../utils/helpers";
 
-interface IButtonProps {
+interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   children: React.ReactNode;
-  props?: HTMLInputTypeAttribute;
 }
 
 const Button = ({ className, children, ...props }: IButtonProps) => {

@@ -74,6 +74,7 @@ const PortfolioDetails = () => {
           {ImageItems.map((imageItem: IImageItem) => {
             return (
               <img
+                key={imageItem.src}
                 src={imageItem.src}
                 alt={imageItem.src}
                 className="container"

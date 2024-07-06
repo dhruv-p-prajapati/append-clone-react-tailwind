@@ -50,7 +50,10 @@ const ContactUsPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {ContactCardItems.map((contactCardItem: IContactCardItem) => {
             return (
-              <GenerateContactCardItem contactCardItem={contactCardItem} />
+              <GenerateContactCardItem
+                key={contactCardItem.name}
+                contactCardItem={contactCardItem}
+              />
             );
           })}
         </div>

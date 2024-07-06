@@ -28,6 +28,7 @@ const PortfolioPage = () => {
         {PortfolioTabItems.map((portfolioTabItem: PortfolioTabs) => {
           return (
             <li
+              key={portfolioTabItem}
               onClick={() => setSelectedTab(portfolioTabItem)}
               className={cn(
                 "py-2 px-5 font-medium rounded-full duration-300 hover:bg-accent hover:text-white inline-block cursor-pointer",

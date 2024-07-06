@@ -45,6 +45,7 @@ const FaqAccordian = () => {
       {AccordianItems.map((accordianItem: IAccordianItem) => {
         return (
           <GenerateAccordianItem
+            key={accordianItem.id}
             accordianItem={accordianItem}
             activeIndex={activeIndex}
             setActiveIndex={setActiveIndex}

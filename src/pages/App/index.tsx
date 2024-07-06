@@ -1,4 +1,5 @@
 import Navbar from "../../components/Navbar";
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 import AboutPage from "../About/AboutPage";
 import CompanyLogo from "../CompanyLogo/CompanyLogo";
 import ContactUsPage from "../ContactUs/ContactUsPage";
@@ -17,6 +18,7 @@ const AppComponents = () => {
   return (
     <>
       <Navbar />
+      <ScrollToTopButton />
       <HomePage />
       <CompanyLogo />
       <AboutPage />
