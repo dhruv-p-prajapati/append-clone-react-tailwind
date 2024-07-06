@@ -8,6 +8,7 @@ import {
 } from "react-icons/bs";
 import SectionTitle from "../../components/SectionTitle";
 import { NavLinkSlugs } from "../../components/Navbar";
+import { NavLink } from "react-router-dom";
 
 interface IServiceItem {
   icon: React.ReactNode;
@@ -76,34 +77,36 @@ const GenerateServiceItem = ({
   serviceItem: IServiceItem;
 }) => {
   return (
-    <div className="group">
-      <div className="flex gap-2">
-        <span className="flex-[3_3_0]">
-          <hr className="border-t-2 border-t-accent w-full" />
-        </span>
-        <span className="flex-[95_95_0]">
-          <hr className="border-t-2 border-t-gray-300 w-full" />
-        </span>
-      </div>
-      <div className="flex gap-10 items-center lg:justify-center relative mt-10">
-        {/* Icon */}
-        <div className=" relative flex justify-center items-center">
-          <span className="text-[55px] opacity-60 after:h-7 after:absolute after:w-7 after:bg-[#f8c7c7] after:-z-10 after:rounded-full after:-bottom-1 after:-right-3">
-            {serviceItem.icon}
+    <NavLink to="/service-details">
+      <div className="group">
+        <div className="flex gap-2">
+          <span className="flex-[3_3_0]">
+            <hr className="border-t-2 border-t-accent w-full" />
+          </span>
+          <span className="flex-[95_95_0]">
+            <hr className="border-t-2 border-t-gray-300 w-full" />
           </span>
         </div>
+        <div className="flex gap-10 items-center lg:justify-center relative mt-10">
+          {/* Icon */}
+          <div className=" relative flex justify-center items-center">
+            <span className="text-[55px] opacity-60 after:h-7 after:absolute after:w-7 after:bg-[#f8c7c7] after:-z-10 after:rounded-full after:-bottom-1 after:-right-3">
+              {serviceItem.icon}
+            </span>
+          </div>
 
-        {/* Title and Description */}
-        <div>
-          <h4 className="font-bold mb-4 text-lg group-hover:text-accent duration-300 text-default">
-            {serviceItem.title}
-          </h4>
-          <p className="text-sm text-primary font-opensans">
-            {serviceItem.desc}
-          </p>
+          {/* Title and Description */}
+          <div>
+            <h4 className="font-bold mb-4 text-lg group-hover:text-accent duration-300 text-default">
+              {serviceItem.title}
+            </h4>
+            <p className="text-sm text-primary font-opensans">
+              {serviceItem.desc}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </NavLink>
   );
 };
 
