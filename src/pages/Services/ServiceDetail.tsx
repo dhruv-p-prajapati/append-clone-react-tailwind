@@ -11,7 +11,7 @@ import {
   BsTelephone,
 } from "react-icons/bs";
 import { useEffect } from "react";
-import { scrollToTop } from "../../utils/helpers";
+import { cn, scrollToTop } from "../../utils/helpers";
 
 interface IServiceListItem {
   title: string;
@@ -83,11 +83,12 @@ const ServiceDetail = () => {
                   {ServiceListItems.map((serviceListItem: IServiceListItem) => {
                     return (
                       <div
-                        className={`flex justify-start items-center gap-2 py-3 px-4 cursor-pointer font-opensans duration-300 ${
+                        className={cn(
+                          "flex justify-start items-center gap-2 py-3 px-4 cursor-pointer font-opensans duration-300",
                           serviceListItem.isSelected
                             ? "bg-accent text-white hover:bg-[#f6f6f7] hover:text-default"
                             : "bg-[#f6f6f7] hover:text-accent hover:bg-[#fef5f5] "
-                        }`}
+                        )}
                       >
                         <i>
                           <BsArrowRightCircle />
@@ -106,9 +107,7 @@ const ServiceDetail = () => {
                 <div className="flex gap-2 flex-col">
                   {CatalogItems.map((catalogItem: ICatalogItem) => {
                     return (
-                      <div
-                        className={`flex justify-start items-center gap-2 py-2 cursor-pointer font-opensans duration-300 hover:text-accent`}
-                      >
+                      <div className="flex justify-start items-center gap-2 py-2 cursor-pointer font-opensans duration-300 hover:text-accent">
                         <i className="text-2xl text-accent">
                           {catalogItem.icon}
                         </i>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BsChevronRight } from "react-icons/bs";
+import { cn } from "../../utils/helpers";
 
 interface IAccordianItem {
   id: number;
@@ -80,29 +81,30 @@ const GenerateAccordianItem = ({
         <div className="flex gap-2 items-start justify-center text-lg">
           <span className="text-accent">{accordianItem.id}.</span>
           <span
-            className={`font-medium duration-300 hover:text-accent ${
-              activeIndex.includes(accordianItem.id) ? "text-accent" : ""
-            }`}
+            className={cn(
+              "font-medium duration-300 hover:text-accent",
+              activeIndex.includes(accordianItem.id) && "text-accent"
+            )}
           >
             {accordianItem.title}
           </span>
         </div>
         <div
-          className={`${
-            activeIndex.includes(accordianItem.id)
-              ? "rotate-90 text-accent"
-              : ""
-          } duration-300`}
+          className={cn(
+            "duration-300",
+            activeIndex.includes(accordianItem.id) && "rotate-90 text-accent"
+          )}
         >
           <BsChevronRight />
         </div>
       </div>
       <div
-        className={`duration-300 ${
+        className={cn(
+          "duration-300 font-opensans",
           activeIndex.includes(accordianItem.id)
-            ? "opacity-100 py-4"
+            ? "py-4"
             : "overflow-hidden h-0 w-0"
-        } font-opensans`}
+        )}
       >
         <p>{accordianItem.desc}</p>
       </div>
