@@ -1,4 +1,4 @@
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import { NavLinkSlugs } from "../../components/Navbar";
 import SectionTitle from "../../components/SectionTitle";
 import {

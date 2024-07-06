@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import Button from "../../components/Button";
 import { useEffect } from "react";
+import { scrollToTop } from "../../utils/helpers";
 
 const responsive = {
   desktop: {
@@ -41,13 +42,6 @@ const ImageItems: IImageItem[] = [
 ];
 
 const PortfolioDetails = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth", // for smooth scrolling
-    });
-  };
-
   useEffect(() => {
     scrollToTop();
   }, []);
