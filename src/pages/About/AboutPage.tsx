@@ -7,6 +7,7 @@ import {
   BsArrowRight,
 } from "react-icons/bs";
 import { NavLinkSlugs } from "../../components/Navbar";
+import { cn } from "../../utils/helpers";
 
 interface IAboutCardItem {
   icon: React.ReactNode;
@@ -94,9 +95,10 @@ const GenerateAboutCard = ({
 }) => {
   return (
     <div
-      className={` md:w-[calc(50%-40px)] bg-white px-8 py-10 group rounded-xl shadow-2xl ${
-        aboutCardItem?.isUpper ? "md:-mt-8 md:mb-8" : ""
-      }`}
+      className={cn(
+        "md:w-[calc(50%-40px)] bg-white px-8 py-10 group rounded-xl shadow-2xl",
+        aboutCardItem?.isUpper && "md:-mt-8 md:mb-8"
+      )}
     >
       <div className="text-3xl w-20 h-20 rounded-full flex justify-center items-center mb-6 text-accent bg-[#f4ebeb] duration-300 group-hover:bg-accent group-hover:text-white">
         {aboutCardItem.icon}

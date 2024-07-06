@@ -20,10 +20,12 @@ const HomePage = () => {
           <input
             type="text"
             placeholder="Enter email address"
-            className="py-5 px-3 rounded focus:ring-0 focus:outline-none flex-1"
+            className="py-5 px-3 rounded-[7px] focus:ring-0 focus:outline-none flex-1"
           />
           <div className="flex items-center pr-3">
-            <Button className="">Sign Up</Button>
+            <Button className="py-2 px-5 rounded-[7px] font-opensans">
+              Subscribe
+            </Button>
           </div>
         </div>
       </div>

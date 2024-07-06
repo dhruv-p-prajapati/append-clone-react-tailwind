@@ -3,6 +3,7 @@ import { NavLinkSlugs } from "../../components/Navbar";
 import SectionTitle from "../../components/SectionTitle";
 import PortfolioGrid from "./PortfolioGrid";
 import { PortfolioTabs } from "./PortfolioTabs";
+import { cn } from "../../utils/helpers";
 
 const PortfolioTabItems: PortfolioTabs[] = [
   PortfolioTabs.ALL,
@@ -28,9 +29,10 @@ const PortfolioPage = () => {
           return (
             <li
               onClick={() => setSelectedTab(portfolioTabItem)}
-              className={`py-2 px-5 font-medium rounded-full duration-300 hover:bg-accent hover:text-white inline-block cursor-pointer ${
-                selectedTab === portfolioTabItem ? "bg-accent text-white" : ""
-              }`}
+              className={cn(
+                "py-2 px-5 font-medium rounded-full duration-300 hover:bg-accent hover:text-white inline-block cursor-pointer",
+                selectedTab === portfolioTabItem && "bg-accent text-white"
+              )}
             >
               {portfolioTabItem}
             </li>

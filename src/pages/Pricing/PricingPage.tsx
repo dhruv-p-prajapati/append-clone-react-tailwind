@@ -2,6 +2,7 @@ import { BsBox, BsCheck, BsRocket, BsSend, BsX } from "react-icons/bs";
 import Button from "../../components/Button";
 import { NavLinkSlugs } from "../../components/Navbar";
 import SectionTitle from "../../components/SectionTitle";
+import { cn } from "../../utils/helpers";
 
 interface IFeatureItem {
   desc: string;
@@ -112,11 +113,11 @@ const GeneratePricingCard = ({
 }) => {
   return (
     <div
-      className={`py-14 mb-14 px-10 relative shadow-lg rounded-2xl w-full lg:basis-1/3 bg-white ${
-        pricingItem.isMiddle
-          ? "lg:scale-[1.15] z-10 border-[3px] border-accent"
-          : ""
-      }`}
+      className={cn(
+        "py-14 mb-14 px-10 relative shadow-lg rounded-2xl w-full lg:basis-1/3 bg-white",
+        pricingItem.isMiddle &&
+          "lg:scale-[1.15] z-10 border-[3px] border-accent"
+      )}
     >
       {/* Title  */}
       <h3 className="font-semibold mb-4 text-xl text-center">
@@ -141,22 +142,23 @@ const GeneratePricingCard = ({
       <ul className="py-5">
         {pricingItem.features.map((feature: IFeatureItem) => {
           return (
-            <li className={`py-[10px] flex items-center font-opensans`}>
+            <li className="py-[10px] flex items-center font-opensans opacity-85">
               <i
-                className={`${
+                className={cn(
+                  "text-2xl",
                   feature?.isAvailable === false
                     ? "text-[#bcbdbe]"
                     : "text-[#059552]"
-                } text-2xl`}
+                )}
               >
                 {feature?.isAvailable === false ? <BsX /> : <BsCheck />}
               </i>
               <span
-                className={`${
+                className={cn(
                   feature?.isAvailable === false
                     ? "text-[#bcbdbe] line-through"
                     : "text-primary"
-                } `}
+                )}
               >
                 {feature.desc}
               </span>
@@ -167,7 +169,7 @@ const GeneratePricingCard = ({
 
       {/* Button */}
       <div className="text-center">
-        <Button className="py-2 px-10 lg:px-10 rounded-full font-semibold bg-white text-primary border border-primary border-opacity-20 hover:bg-accent hover:text-white hover:opacity-100">
+        <Button className="py-2 px-10 font-semibold opacity-85 rounded-full bg-white text-primary border border-primary border-opacity-20 hover:bg-accent hover:text-white hover:opacity-100">
           Buy Now
         </Button>
       </div>

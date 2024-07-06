@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { useLocation } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
+import { cn } from "../utils/helpers";
 
 export enum NavLinkSlugs {
   HOME = "/",
@@ -74,16 +75,17 @@ const Navbar = ({ isOtherRoute }: { isOtherRoute?: Boolean }) => {
   return (
     <div
       id="nav"
-      className={`fixed top-0 left-0 right-0 ${
-        isOtherRoute || isScrolled ? "bg-white shadow-lg" : ""
-      } flex justify-between items-center py-7 px-4 duration-300 z-50 md:h-24`}
+      className={cn(
+        "fixed top-0 left-0 right-0 flex justify-between items-center py-5 px-3 duration-300 z-50 md:h-24",
+        (isOtherRoute || isScrolled) && "bg-white shadow-lg"
+      )}
     >
       {/* Logo */}
       <div className="flex gap-1 text-2xl font-semibold">
         <h1
-          className={`${
+          className={cn(
             isOtherRoute || isScrolled ? "text-primary" : "text-white"
-          }`}
+          )}
         >
           Append
         </h1>
@@ -91,28 +93,28 @@ const Navbar = ({ isOtherRoute }: { isOtherRoute?: Boolean }) => {
       </div>
 
       {/* Links */}
-      <div className="">
+      <div>
         <ul
-          className={`sm:text-default ${
-            isOtherRoute || isScrolled ? "" : "xl2:text-[#ffffff80]"
-          } xl2:flex ${
+          className={cn(
+            "sm:text-default xl2:flex",
+            !(isOtherRoute || isScrolled) && "xl2:text-[#ffffff80]",
             open
               ? "bg-white flex flex-col gap-5 absolute w-[90vw] top-16 items-start -translate-x-1/2 left-1/2 rounded p-4 z-40"
               : "hidden gap-7"
-          }`}
+          )}
         >
           {NavLinkItems.map((navLinkItem: INavLinkItem) => {
             return (
               <NavHashLink
                 to={"/#" + navLinkItem.slug}
-                className={`${
+                className={cn(
                   location.pathname === "/" &&
-                  location.hash.slice(1) === navLinkItem.slug
+                    location.hash.slice(1) === navLinkItem.slug
                     ? isOtherRoute || isScrolled
                       ? "text-accent"
                       : "sm:text-accent xl2:text-white"
                     : ""
-                }`}
+                )}
               >
                 <li onClick={toggleNavbar}>{navLinkItem.title}</li>
               </NavHashLink>
@@ -128,21 +130,24 @@ const Navbar = ({ isOtherRoute }: { isOtherRoute?: Boolean }) => {
 
       {/* Get started Button and Hamburger Menu */}
       <div className="flex justify-center items-center gap-3">
-        <Button>Get Started</Button>
+        <Button className="text-sm py-2 px-[26px] font-opensans">
+          Get Started
+        </Button>
 
         <div className="xl2:hidden z-40">
           {!open ? (
             <GiHamburgerMenu
-              className={`text-2xl ${
+              className={cn(
+                "text-2xl",
                 isOtherRoute || isScrolled ? "text-primary" : "text-white"
-              }`}
+              )}
               onClick={() => {
                 setOpen(!open);
               }}
             />
           ) : (
             <IoMdClose
-              className={`text-2xl text-white`}
+              className="text-2xl text-white"
               onClick={() => {
                 setOpen(!open);
               }}
