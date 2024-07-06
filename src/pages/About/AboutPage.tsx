@@ -44,7 +44,7 @@ const AboutCardItems: IAboutCardItem[] = [
 const AboutPage = () => {
   return (
     <div id={NavLinkSlugs.ABOUT} className="bg-aboutBg py-14">
-      <div className="container flex flex-col xl2:flex-row items-center">
+      <div className="container flex flex-col sm:gap-10 xl2:gap-0 xl2:flex-row items-center">
         {/* About Description */}
         <div className="basis-5/12">
           <h3 className="lg:text-base font-medium py-2 px-5 text-accent bg-[#f4ebeb] inline-block rounded">
@@ -71,7 +71,7 @@ const AboutPage = () => {
         </div>
 
         {/* About cards */}
-        <div className="flex basis-7/12 flex-wrap justify-center gap-5">
+        <div className="basis-7/12 grid grid-cols-1 md:grid-cols-2 gap-5">
           {AboutCardItems.map((aboutCardItem: IAboutCardItem) => {
             return (
               <GenerateAboutCard
@@ -96,7 +96,7 @@ const GenerateAboutCard = ({
   return (
     <div
       className={cn(
-        "md:w-[calc(50%-20px)] bg-white px-10 py-12 group rounded-xl shadow-2xl",
+        "bg-white px-10 py-12 group rounded-xl shadow-2xl",
         aboutCardItem?.isUpper && "md:-mt-8 md:mb-8"
       )}
     >

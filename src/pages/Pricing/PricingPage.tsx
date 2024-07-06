@@ -99,7 +99,12 @@ const PricingPage = () => {
 
       <div className="container flex flex-col lg:flex-row gap-5 justify-center items-center mt-10">
         {PricingItems.map((pricingItem: IPricingItem) => {
-          return <GeneratePricingCard pricingItem={pricingItem} />;
+          return (
+            <GeneratePricingCard
+              key={pricingItem.title}
+              pricingItem={pricingItem}
+            />
+          );
         })}
       </div>
     </div>
@@ -140,9 +145,12 @@ const GeneratePricingCard = ({
 
       {/* Features */}
       <ul className="py-5">
-        {pricingItem.features.map((feature: IFeatureItem) => {
+        {pricingItem.features.map((feature: IFeatureItem, index: number) => {
           return (
-            <li className="py-[10px] flex items-center font-opensans opacity-85">
+            <li
+              key={index}
+              className="py-[10px] flex items-center font-opensans opacity-85"
+            >
               <i
                 className={cn(
                   "text-2xl",
