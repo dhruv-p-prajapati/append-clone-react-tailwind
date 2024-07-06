@@ -64,7 +64,7 @@ const TestimonialItems: ITestimonialItem[] = [
 const TestimonialsPage = () => {
   return (
     <div className="bg-aboutBg">
-      <div className="py-16 flex flex-col gap-5 lg:flex-row justify-center items-center w-[95vw] sm:w-[70vw] lg:w-[85vw] mx-auto">
+      <div className="container py-16 flex flex-col gap-5 lg:flex-row justify-center items-center mx-auto">
         <div className="basis-5/12">
           <h3 className="text-3xl font-bold text-default mb-2">Testimonials</h3>
           <p className="text-primary font-opensans">

@@ -5,7 +5,7 @@ const BreadCrumb = () => {
 
   return (
     <div className="bg-aboutBg py-4">
-      <div className="justify-center items-center w-[95vw] sm:w-[70vw] lg:w-[85vw] mx-auto">
+      <div className="container justify-center items-center">
         <div className="flex gap-2 items-center text-[#b2b2b2] font-semibold">
           <Link to="/" className="text-accent hover:opacity-70 duration-300">
             Home

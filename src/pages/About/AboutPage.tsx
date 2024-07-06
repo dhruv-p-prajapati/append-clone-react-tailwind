@@ -44,9 +44,9 @@ const AboutCardItems: IAboutCardItem[] = [
 const AboutPage = () => {
   return (
     <div id={NavLinkSlugs.ABOUT} className="bg-aboutBg py-14">
-      <div className="w-screen mx-auto lg:w-[90vw] flex flex-col xl2:flex-row gap-10 items-center">
+      <div className="container flex flex-col xl2:flex-row items-center">
         {/* About Description */}
-        <div className="px-12 basis-5/12">
+        <div className="basis-5/12">
           <h3 className="lg:text-base font-medium py-2 px-5 text-accent bg-[#f4ebeb] inline-block rounded">
             About Us
           </h3>
@@ -62,16 +62,16 @@ const AboutPage = () => {
             tempora deleniti soluta.
           </p>
 
-          <Button className="flex items-center group relative pl-4 pr-5">
-            <span className="mr-3">Read More</span>
-            <span className="duration-300 absolute right-3 group-hover:right-2">
+          <Button className="flex gap-2 items-center group">
+            <span>Read More</span>
+            <span className="duration-300 group-hover:translate-x-2">
               <BsArrowRight />
             </span>
           </Button>
         </div>
 
         {/* About cards */}
-        <div className="flex basis-7/12 flex-wrap justify-center gap-5 w-[75vw] md:w-screen">
+        <div className="flex basis-7/12 flex-wrap justify-center gap-5">
           {AboutCardItems.map((aboutCardItem: IAboutCardItem) => {
             return (
               <GenerateAboutCard
@@ -96,7 +96,7 @@ const GenerateAboutCard = ({
   return (
     <div
       className={cn(
-        "md:w-[calc(50%-40px)] bg-white px-8 py-10 group rounded-xl shadow-2xl",
+        "md:w-[calc(50%-20px)] bg-white px-10 py-12 group rounded-xl shadow-2xl",
         aboutCardItem?.isUpper && "md:-mt-8 md:mb-8"
       )}
     >

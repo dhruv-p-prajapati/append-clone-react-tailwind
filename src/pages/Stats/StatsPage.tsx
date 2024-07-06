@@ -25,7 +25,7 @@ const StatsItems: IStatsItem[] = [
 const StatsPage = () => {
   return (
     <div className="bg-stats-image bg-cover bg-center">
-      <div className="grid grid-cols-1 gap-y-20 md:grid-cols-2 lg:grid-cols-4 py-40 px-28">
+      <div className="container grid grid-cols-1 gap-y-20 md:grid-cols-2 lg:grid-cols-4 py-40">
         {StatsItems.map((statsItem: IStatsItem) => {
           return (
             <GenerateStatsItem

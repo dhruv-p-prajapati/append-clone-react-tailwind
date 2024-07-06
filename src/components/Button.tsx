@@ -11,7 +11,7 @@ const Button = ({ className, children, ...props }: IButtonProps) => {
   return (
     <button
       className={cn(
-        "bg-accent text-white rounded py-1 px-2 duration-300 hover:opacity-85",
+        "bg-accent text-white rounded py-2 px-7 duration-300 hover:opacity-85",
         className
       )}
       {...props}

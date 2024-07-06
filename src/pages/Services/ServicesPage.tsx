@@ -51,13 +51,13 @@ const ServiceItems: IServiceItem[] = [
 
 const ServicesPage = () => {
   return (
-    <div id={NavLinkSlugs.SERVICES} className="py-16">
+    <div id={NavLinkSlugs.SERVICES} className="container py-16">
       <SectionTitle
         title="Services"
         desc="Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit"
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-2 md:px-12 lg:px-28">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {ServiceItems.map((serviceItem: IServiceItem) => {
           return (
             <GenerateServiceItem

@@ -39,10 +39,7 @@ const ContactCardItems: IContactCardItem[] = [
 
 const ContactUsPage = () => {
   return (
-    <div
-      id={NavLinkSlugs.CONTACT}
-      className="py-16 w-[95vw] sm:w-[70vw] lg:w-[85vw] mx-auto"
-    >
+    <div id={NavLinkSlugs.CONTACT} className="container py-16">
       <SectionTitle
         title="Contact"
         desc="Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit"

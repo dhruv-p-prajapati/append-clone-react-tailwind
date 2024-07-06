@@ -5,18 +5,18 @@ const HomePage = () => {
   return (
     <div
       id={NavLinkSlugs.HOME}
-      className="h-screen bg-cover bg-center bg-hero-image flex justify-center items-center"
+      className="flex h-screen items-center justify-center bg-hero-image bg-cover bg-center"
     >
-      <div className="w-[95vw] md:w-[85%]">
-        <div className="flex flex-col gap-3 items-start">
-          <h1 className="text-3xl lg:text-5xl text-white font-bold">
+      <div className="container">
+        <div className="flex flex-col items-start gap-3">
+          <h1 className="text-3xl font-bold text-white lg:text-5xl">
             Welcome to Our Website
           </h1>
-          <p className="text-white opacity-80 text-base lg:text-xl font-opensans">
+          <p className="font-opensans text-base text-white opacity-80 lg:text-xl">
             We are team of talented designers making websites with Bootstrap
           </p>
         </div>
-        <div className="mt-6 flex bg-white rounded w-[min(500px,95vw)]">
+        <div className="mt-6 flex w-[min(500px,95vw)] rounded bg-white">
           <input
             type="text"
             placeholder="Enter email address"

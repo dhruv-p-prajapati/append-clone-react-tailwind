@@ -72,7 +72,7 @@ const ServiceDetail = () => {
 
         <BreadCrumb />
 
-        <div className="flex justify-center items-center w-[95vw] sm:w-[70vw] lg:w-[85vw] mx-auto my-10">
+        <div className="container flex justify-center items-center my-10">
           <div className="flex flex-col lg:flex-row gap-6">
             <div className="lg:basis-[35%] lg:mr-8 flex flex-col gap-8">
               <div className="shadow-accordian p-5">

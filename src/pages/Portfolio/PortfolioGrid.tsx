@@ -58,7 +58,7 @@ const PortfolioGridItems: IPortfolioGridItem[] = [
 
 const PortfolioGrid = ({ selectedTab }: { selectedTab: PortfolioTabs }) => {
   return (
-    <div className="flex justify-center items-center w-[95vw] sm:w-[70vw] lg:w-[85vw] mx-auto mt-10">
+    <div className="container flex justify-center items-center mt-10">
       <div className="columns-1 md:columns-2 lg:columns-3 gap-4">
         {PortfolioGridItems.filter((portfolioGridItem: IPortfolioGridItem) => {
           return (

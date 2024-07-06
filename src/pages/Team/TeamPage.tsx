@@ -63,7 +63,7 @@ const TeamItems: ITeamItem[] = [
 const TeamPage = () => {
   return (
     <div id={NavLinkSlugs.TEAM} className="bg-aboutBg py-14">
-      <div className="w-[85vw] mx-auto">
+      <div className="container">
         <SectionTitle
           title="Team"
           desc="Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit"

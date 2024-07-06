@@ -25,7 +25,7 @@ const OurServicesItems: string[] = [
 const Footer = () => {
   return (
     <div className="bg-aboutBg py-16">
-      <div className="flex flex-col gap-5 justify-center items-center w-[95vw] sm:w-[70vw] lg:w-[85vw] mx-auto">
+      <div className="container flex flex-col gap-5 justify-center items-center">
         <div className="grid grid-cols-12 gap-4 justify-between items-start">
           {/* Content */}
           <div className="col-span-12 lg:col-span-5">
