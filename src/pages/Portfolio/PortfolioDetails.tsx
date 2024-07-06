@@ -76,13 +76,13 @@ const PortfolioDetails = () => {
               <img
                 src={imageItem.src}
                 alt={imageItem.src}
-                className="w-[95vw] sm:w-[70vw] lg:w-[85vw] mx-auto"
+                className="container"
               />
             );
           })}
         </Carousel>
 
-        <div className="grid grid-cols-12 justify-center items-start w-[95vw] sm:w-[70vw] lg:w-[85vw] mx-auto my-10">
+        <div className="container grid grid-cols-12 justify-center items-start my-10">
           {/* Left */}
           <div className="col-start-1 col-span-12 lg:col-span-8">
             <h2 className="text-2xl font-bold mb-5">

@@ -14,7 +14,7 @@ const LogoItems: ILogoItem[] = [
 
 const CompanyLogo = () => {
   return (
-    <div className="flex flex-wrap gap-10 px-14 justify-around py-8">
+    <div className="container flex flex-wrap gap-10 justify-around py-8">
       {LogoItems.map((logoItem: ILogoItem) => {
         return (
           <img

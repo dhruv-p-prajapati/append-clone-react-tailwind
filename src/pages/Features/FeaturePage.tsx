@@ -10,7 +10,7 @@ const FeaturePage = () => {
         desc="Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit"
       />
 
-      <div className="flex gap-6 flex-col-reverse lg:flex-row justify-center items-center w-[90vw] sm:w-[70vw] mx-auto lg:w-[85vw]">
+      <div className="container flex gap-6 flex-col-reverse lg:flex-row justify-center items-center">
         {/* Content */}
         <div className="basis-5/12">
           <h2 className="font-bold text-3xl mt-2 text-primary">
@@ -24,9 +24,7 @@ const FeaturePage = () => {
             proident.
           </p>
 
-          <Button className="flex items-center group relative pl-4 pr-5">
-            Get Started
-          </Button>
+          <Button>Get Started</Button>
         </div>
 
         {/* Images */}
@@ -44,7 +42,7 @@ const FeaturePage = () => {
         </div>
       </div>
 
-      <div className="flex gap-6 flex-col lg:flex-row justify-between items-center mt-24 w-[90vw] sm:w-[70vw] mx-auto lg:w-[85vw]">
+      <div className="container flex gap-6 flex-col lg:flex-row justify-between items-center mt-24">
         {/* Image */}
         <div className="basis-1/2">
           <img

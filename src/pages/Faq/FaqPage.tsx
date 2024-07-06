@@ -2,7 +2,7 @@ import FaqAccordian from "./FaqAccordian";
 
 const FaqPage = () => {
   return (
-    <div className="py-16 flex flex-col gap-5 lg:flex-row justify-center items-start w-[95vw] sm:w-[70vw] lg:w-[85vw] mx-auto">
+    <div className="container py-16 flex flex-col gap-5 lg:flex-row justify-center items-start">
       <div className="basis-1/3 lg:px-12">
         <h3 className="flex flex-col text-[34px] text-primary ">
           <span className="font-normal">Frequently Asked</span>
