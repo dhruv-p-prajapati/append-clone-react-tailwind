@@ -1,6 +1,7 @@
 import Navbar from "../../components/Navbar";
 import ScrollToTopButton from "../../components/ScrollToTopButton";
 import AboutPage from "../About/AboutPage";
+import BlogPage from "../Blog/BlogPage";
 import CompanyLogo from "../CompanyLogo/CompanyLogo";
 import ContactUsPage from "../ContactUs/ContactUsPage";
 import CtaPage from "../Cta/CtaPage";
@@ -31,6 +32,7 @@ const AppComponents = () => {
       <TeamPage />
       <CtaPage />
       <TestimonialsPage />
+      <BlogPage />
       <ContactUsPage />
     </>
   );

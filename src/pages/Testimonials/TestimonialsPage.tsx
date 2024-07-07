@@ -76,7 +76,7 @@ const TestimonialsPage = () => {
         </div>
 
         <Carousel
-          className="pb-16 w-full basis-7/12 bg-white shadow-accordian"
+          className="pb-16 w-full basis-7/12 bg-white shadow-custom"
           showDots={true}
           responsive={responsive}
           infinite={true}
