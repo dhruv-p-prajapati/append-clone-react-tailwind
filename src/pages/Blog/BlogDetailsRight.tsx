@@ -46,7 +46,6 @@ const TagItems: string[] = [
   "Design",
   "Office",
   "Creative",
-  "Office",
   "Studio",
   "Smart",
   "Tips",

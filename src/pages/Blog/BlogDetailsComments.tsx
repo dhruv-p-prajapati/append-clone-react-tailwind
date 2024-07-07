@@ -1,4 +1,5 @@
 import { BsReplyFill } from "react-icons/bs";
+import Button from "../../components/Button";
 
 interface ICommentItem {
   src: string;
@@ -91,6 +92,44 @@ const BlogDetailsComments = () => {
           );
         })}
       </div>
+
+      <div className="shadow-custom p-7 grid gap-5 grid-cols-12 my-10 font-opensans">
+        <div className="col-span-12 ">
+          <h3 className="text-2xl text-default font-bold font-montserrat">
+            Post Comment
+          </h3>
+
+          <p className="text-default text-sm pt-1">
+            Your email address will not be published. Required fields are marked
+            *
+          </p>
+        </div>
+        <input
+          type="text"
+          placeholder="Your Name *"
+          className="col-span-6 py-3 px-4 text-sm border border-gray-300 rounded duration-300 focus:border-accent focus:outline-0"
+        />
+        <input
+          type="text"
+          placeholder="Your Email *"
+          className="col-span-6 py-3 px-4 text-sm border border-gray-300 rounded duration-300 focus:border-accent focus:outline-0"
+        />
+
+        <input
+          type="text"
+          placeholder="Your Website *"
+          className="col-span-12 py-3 px-4 text-sm border border-gray-300 rounded duration-300 focus:border-accent focus:outline-0"
+        />
+
+        <textarea
+          placeholder="Your Comment *"
+          className="col-span-12 pt-3 pb-24 px-4 text-sm border border-gray-300 rounded duration-300 focus:border-accent focus:outline-0"
+        ></textarea>
+
+        <div className="col-span-12 text-center">
+          <Button>Send Message</Button>
+        </div>
+      </div>
     </>
   );
 };
@@ -127,11 +166,8 @@ const GenerateComment = ({ commentItem }: { commentItem: ICommentItem }) => {
 
       {commentItem.replies?.map((commentItemReply: ICommentItem) => {
         return (
-          <div className="pl-10">
-            <GenerateComment
-              key={commentItemReply.publishedAt}
-              commentItem={commentItemReply}
-            />
+          <div className="pl-10" key={commentItemReply.publishedAt}>
+            <GenerateComment commentItem={commentItemReply} />
           </div>
         );
       })}
