@@ -66,7 +66,7 @@ const GenerateAccordianItem = ({
   setActiveIndex: React.Dispatch<React.SetStateAction<number[]>>;
 }) => {
   return (
-    <div key={accordianItem.id} className="shadow-accordian p-4">
+    <div key={accordianItem.id} className="shadow-custom p-4">
       <div
         className="text-left flex justify-between items-center cursor-pointer"
         onClick={() => {

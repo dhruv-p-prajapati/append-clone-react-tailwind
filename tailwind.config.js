@@ -26,7 +26,7 @@ export default {
         montserrat: ["Montserrat", "sans-serif"],
       },
       boxShadow: {
-        accordian: "0px 5px 25px 0px rgba(0, 0, 0, 0.1)",
+        custom: "0px 5px 25px 0px rgba(0, 0, 0, 0.1)",
       },
     },
   },

@@ -49,7 +49,7 @@ const BlogPage = () => {
         {BlogItems.map((blogItem: IBlogItem) => (
           <div
             key={blogItem.blogImageSrc}
-            className="shadow-accordian rounded-xl overflow-hidden"
+            className="shadow-custom rounded-xl overflow-hidden"
           >
             <div className="h-56">
               <img

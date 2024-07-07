@@ -75,7 +75,7 @@ const ServiceDetail = () => {
         <div className="container flex justify-center items-center my-10">
           <div className="flex flex-col lg:flex-row gap-6">
             <div className="lg:basis-[35%] lg:mr-8 flex flex-col gap-8">
-              <div className="shadow-accordian p-5">
+              <div className="shadow-custom p-5">
                 <h4 className="text-xl font-bold border-b-2 border-[#eeeeee] pb-3 mb-4">
                   Service List
                 </h4>
@@ -101,7 +101,7 @@ const ServiceDetail = () => {
                 </div>
               </div>
 
-              <div className="shadow-accordian p-5">
+              <div className="shadow-custom p-5">
                 <h4 className="text-xl font-bold border-b-2 border-[#eeeeee] pb-3 mb-4">
                   Download Catalog
                 </h4>
