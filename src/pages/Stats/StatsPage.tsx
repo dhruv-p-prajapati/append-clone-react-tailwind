@@ -1,3 +1,4 @@
+import CountUp from "react-countup";
 interface IStatsItem {
   statsNumber: number;
   statsTitle: string;
@@ -43,7 +44,7 @@ const GenerateStatsItem = ({ statsItem }: { statsItem: IStatsItem }) => {
   return (
     <div className="flex justify-center items-center gap-2 flex-col text-white font-bold">
       <div className="text-5xl tracking-wider font-opensans">
-        {statsItem.statsNumber}
+        <CountUp start={0} end={statsItem.statsNumber} duration={2} />
       </div>
       <div className="text-[#bfbebc]">{statsItem.statsTitle}</div>
     </div>
