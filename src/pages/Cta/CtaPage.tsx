@@ -2,9 +2,16 @@ import Button from "../../components/Button";
 
 const CtaPage = () => {
   return (
-    <div className="bg-cta-image bg-fixed top-0 left-0 bg-cover bg-center">
+    <div
+      data-aos="fade-up"
+      className="bg-cta-image bg-fixed top-0 left-0 bg-cover bg-center"
+    >
       <div className="container flex flex-col justify-center items-center text-white z-10 py-20">
-        <div className="w-full lg:w-5/6 flex flex-col justify-center items-center lg:px-3">
+        <div
+          className="w-full lg:w-5/6 flex flex-col justify-center items-center lg:px-3"
+          data-aos="zoom-in"
+          data-aos-delay="1000"
+        >
           <h3 className="text-3xl font-bold">Call To Action</h3>
           <p className="font-opensans mt-3 mb-4 text-center text-white">
             Duis aute irure dolor in reprehenderit in voluptate velit esse

@@ -67,6 +67,8 @@ const PortfolioGrid = ({ selectedTab }: { selectedTab: PortfolioTabs }) => {
           );
         }).map((portfolioGridItem: IPortfolioGridItem) => (
           <div
+            data-aos="fade-up"
+            data-aos-delay="200"
             key={portfolioGridItem.src}
             className="break-inside-avoid mb-4 relative group overflow-hidden"
           >

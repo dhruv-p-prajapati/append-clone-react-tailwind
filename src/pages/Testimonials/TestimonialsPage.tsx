@@ -65,7 +65,7 @@ const TestimonialsPage = () => {
   return (
     <div className="bg-aboutBg">
       <div className="container py-16 flex flex-col gap-5 lg:flex-row justify-center items-center mx-auto">
-        <div className="basis-5/12">
+        <div data-aos="fade-up" className="basis-5/12">
           <h3 className="text-3xl font-bold text-default mb-2">Testimonials</h3>
           <p className="text-primary font-opensans">
             Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute

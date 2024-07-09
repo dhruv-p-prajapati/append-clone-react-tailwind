@@ -45,46 +45,69 @@ const BlogPage = () => {
         title="Recent Posts"
         desc="Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit"
       />
-      <div className="grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-        {BlogItems.map((blogItem: IBlogItem) => (
-          <div
-            key={blogItem.blogImageSrc}
-            className="shadow-custom rounded-xl overflow-hidden"
-          >
-            <div className="h-56">
-              <img
-                src={blogItem.blogImageSrc}
-                alt="blog"
-                className="size-full object-cover"
-              />
-            </div>
-            <div className="p-4 pb-6 px-6 flex flex-col gap-4">
-              <div>
-                <p className="text-sm mb-[10px] text-[#b2b2b2] font-opensans">
-                  {blogItem.category}
-                </p>
-                <Link to="/blog-details">
-                  <h2 className="text-xl mb-[5px] font-bold hover:text-accent duration-300">
-                    {blogItem.title}
-                  </h2>
-                </Link>
-              </div>
-              <div className="flex items-center gap-4 font-opensans">
-                <div className="size-12 rounded-full overflow-hidden">
-                  <img
-                    src={blogItem.authorImageSrc}
-                    alt="author"
-                    className="size-full"
-                  />
-                </div>
-                <div>
-                  <p className="font-semibold mb-1">{blogItem.authorName}</p>
-                  <p className="text-[#b2b2b2]">{blogItem.publishedAt}</p>
-                </div>
-              </div>
-            </div>
+      <div
+        data-aos="fade-up"
+        className="grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3"
+      >
+        {BlogItems.map((blogItem: IBlogItem, index: number) => {
+          return (
+            <GenerateBlogCardItem
+              key={blogItem.blogImageSrc}
+              index={index + 1}
+              blogItem={blogItem}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+const GenerateBlogCardItem = ({
+  blogItem,
+  index,
+}: {
+  blogItem: IBlogItem;
+  index: number;
+}) => {
+  return (
+    <div
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
+      key={blogItem.blogImageSrc}
+      className="shadow-custom rounded-xl overflow-hidden"
+    >
+      <div className="h-56">
+        <img
+          src={blogItem.blogImageSrc}
+          alt="blog"
+          className="size-full object-cover"
+        />
+      </div>
+      <div className="p-4 pb-6 px-6 flex flex-col gap-4">
+        <div>
+          <p className="text-sm mb-[10px] text-[#b2b2b2] font-opensans">
+            {blogItem.category}
+          </p>
+          <Link to="/blog-details">
+            <h2 className="text-xl mb-[5px] font-bold hover:text-accent duration-300">
+              {blogItem.title}
+            </h2>
+          </Link>
+        </div>
+        <div className="flex items-center gap-4 font-opensans">
+          <div className="size-12 rounded-full overflow-hidden">
+            <img
+              src={blogItem.authorImageSrc}
+              alt="author"
+              className="size-full"
+            />
           </div>
-        ))}
+          <div>
+            <p className="font-semibold mb-1">{blogItem.authorName}</p>
+            <p className="text-[#b2b2b2]">{blogItem.publishedAt}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

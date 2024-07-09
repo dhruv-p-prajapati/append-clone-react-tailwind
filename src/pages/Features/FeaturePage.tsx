@@ -12,7 +12,7 @@ const FeaturePage = () => {
 
       <div className="container flex gap-6 flex-col-reverse lg:flex-row justify-center items-center">
         {/* Content */}
-        <div className="basis-5/12">
+        <div data-aos="fade-up" data-aos-delay="200" className="basis-5/12">
           <h2 className="font-bold text-3xl mt-2 text-primary">
             Corporis temporibus maiores provident
           </h2>
@@ -28,7 +28,11 @@ const FeaturePage = () => {
         </div>
 
         {/* Images */}
-        <div className="basis-7/12 grid grid-cols-12 relative">
+        <div
+          data-aos="zoom-out"
+          data-aos-delay="100"
+          className="basis-7/12 grid grid-cols-12 relative"
+        >
           <img
             src="/images/features-light-1.jpg"
             alt="Features light 1"
@@ -44,7 +48,7 @@ const FeaturePage = () => {
 
       <div className="container flex gap-6 flex-col lg:flex-row justify-between items-center mt-24">
         {/* Image */}
-        <div className="basis-1/2">
+        <div data-aos="zoom-in" className="basis-1/2">
           <img
             src="/images/features-light-3.jpg"
             alt="Features light 3"
@@ -53,7 +57,7 @@ const FeaturePage = () => {
         </div>
 
         {/* content */}
-        <div className="basis-5/12">
+        <div data-aos="fade-up" className="basis-5/12">
           <h3 className="text-2xl font-bold">
             Sunt consequatur ad ut est nulla
           </h3>

@@ -97,7 +97,11 @@ const PricingPage = () => {
         desc="Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit"
       />
 
-      <div className="container flex flex-col lg:flex-row gap-5 justify-center items-center mt-10">
+      <div
+        className="container flex flex-col lg:flex-row gap-5 justify-center items-center mt-10"
+        data-aos="zoom-in"
+        data-aos-delay="1000"
+      >
         {PricingItems.map((pricingItem: IPricingItem) => {
           return (
             <GeneratePricingCard
