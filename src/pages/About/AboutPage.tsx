@@ -43,7 +43,12 @@ const AboutCardItems: IAboutCardItem[] = [
 
 const AboutPage = () => {
   return (
-    <div id={NavLinkSlugs.ABOUT} className="bg-aboutBg py-14">
+    <div
+      id={NavLinkSlugs.ABOUT}
+      data-aos="fade-up"
+      data-aos-delay="100"
+      className="bg-aboutBg py-14"
+    >
       <div className="container flex flex-col sm:gap-10 xl2:gap-0 xl2:flex-row items-center">
         {/* About Description */}
         <div className="basis-5/12">
@@ -72,14 +77,17 @@ const AboutPage = () => {
 
         {/* About cards */}
         <div className="basis-7/12 grid grid-cols-1 md:grid-cols-2 gap-5">
-          {AboutCardItems.map((aboutCardItem: IAboutCardItem) => {
-            return (
-              <GenerateAboutCard
-                key={aboutCardItem.title}
-                aboutCardItem={aboutCardItem}
-              />
-            );
-          })}
+          {AboutCardItems.map(
+            (aboutCardItem: IAboutCardItem, index: number) => {
+              return (
+                <GenerateAboutCard
+                  key={aboutCardItem.title}
+                  index={index + 1}
+                  aboutCardItem={aboutCardItem}
+                />
+              );
+            }
+          )}
         </div>
       </div>
     </div>
@@ -90,11 +98,15 @@ export default AboutPage;
 
 const GenerateAboutCard = ({
   aboutCardItem,
+  index,
 }: {
   aboutCardItem: IAboutCardItem;
+  index: number;
 }) => {
   return (
     <div
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
       className={cn(
         "bg-white px-10 py-12 group rounded-xl shadow-2xl",
         aboutCardItem?.isUpper && "md:-mt-8 md:mb-8"

@@ -70,8 +70,14 @@ const TeamPage = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10">
-          {TeamItems.map((teamItem: ITeamItem) => {
-            return <GenerateTeamItem key={teamItem.src} teamItem={teamItem} />;
+          {TeamItems.map((teamItem: ITeamItem, index: number) => {
+            return (
+              <GenerateTeamItem
+                key={teamItem.src}
+                index={index + 1}
+                teamItem={teamItem}
+              />
+            );
           })}
         </div>
       </div>
@@ -79,9 +85,15 @@ const TeamPage = () => {
   );
 };
 
-const GenerateTeamItem = ({ teamItem }: { teamItem: ITeamItem }) => {
+const GenerateTeamItem = ({
+  teamItem,
+  index,
+}: {
+  teamItem: ITeamItem;
+  index: number;
+}) => {
   return (
-    <div>
+    <div data-aos="fade-up" data-aos-delay={index * 500}>
       {/* Image */}
       <div className="mx-20 rounded-full relative border-4 border-white overflow-hidden shadow-lg group">
         <img

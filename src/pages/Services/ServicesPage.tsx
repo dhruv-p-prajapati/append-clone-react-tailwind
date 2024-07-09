@@ -58,10 +58,11 @@ const ServicesPage = () => {
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        {ServiceItems.map((serviceItem: IServiceItem) => {
+        {ServiceItems.map((serviceItem: IServiceItem, index: number) => {
           return (
             <GenerateServiceItem
               key={serviceItem.title}
+              index={index}
               serviceItem={serviceItem}
             />
           );
@@ -73,12 +74,14 @@ const ServicesPage = () => {
 
 const GenerateServiceItem = ({
   serviceItem,
+  index,
 }: {
   serviceItem: IServiceItem;
+  index: number;
 }) => {
   return (
     <NavLink to="/service-details">
-      <div className="group">
+      <div data-aos="fade-up" data-aos-delay={index * 100} className="group">
         <div className="flex gap-2">
           <span className="flex-[3_3_0]">
             <hr className="border-t-2 border-t-accent w-full" />

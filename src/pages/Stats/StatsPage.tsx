@@ -25,8 +25,12 @@ const StatsItems: IStatsItem[] = [
 
 const StatsPage = () => {
   return (
-    <div className="bg-stats-image bg-cover bg-center">
-      <div className="container grid grid-cols-1 gap-y-20 md:grid-cols-2 lg:grid-cols-4 py-40">
+    <div data-aos="fade-up" className="bg-stats-image bg-cover bg-center">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="100"
+        className="container grid grid-cols-1 gap-y-20 md:grid-cols-2 lg:grid-cols-4 py-40"
+      >
         {StatsItems.map((statsItem: IStatsItem) => {
           return (
             <GenerateStatsItem

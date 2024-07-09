@@ -24,7 +24,11 @@ const PortfolioPage = () => {
         desc="Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit"
       />
 
-      <ul className="flex justify-center items-center gap-5">
+      <ul
+        data-aos="fade-up"
+        data-aos-delay="100"
+        className="flex justify-center items-center gap-5"
+      >
         {PortfolioTabItems.map((portfolioTabItem: PortfolioTabs) => {
           return (
             <li

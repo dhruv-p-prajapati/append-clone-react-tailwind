@@ -5,7 +5,10 @@ interface ISectionTitleProps {
 
 const SectionTitle = ({ title, desc }: ISectionTitleProps) => {
   return (
-    <div className="flex justify-center items-center flex-col gap-1">
+    <div
+      data-aos="fade-up"
+      className="flex justify-center items-center flex-col gap-1"
+    >
       <div className="before:w-12 before:inline-block before:h-[2px] before:mr-4 before:bg-accent after:w-11 after:inline-block after:h-[2px] after:ml-4 after:bg-accent text-3xl font-bold flex justify-center items-center tracking-wide text-default">
         {title}
       </div>

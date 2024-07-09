@@ -45,7 +45,11 @@ const ContactUsPage = () => {
         desc="Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit"
       />
 
-      <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-5">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="1000"
+        className="grid sm:grid-cols-1 lg:grid-cols-2 gap-5"
+      >
         {/* Contact Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {ContactCardItems.map((contactCardItem: IContactCardItem) => {
@@ -59,7 +63,11 @@ const ContactUsPage = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="bg-aboutBg p-7 grid gap-5 grid-cols-12">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="1500"
+          className="bg-aboutBg p-7 grid gap-5 grid-cols-12"
+        >
           <input
             type="text"
             placeholder="Your Name"
